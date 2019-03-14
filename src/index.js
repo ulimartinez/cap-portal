@@ -20,11 +20,4 @@ $(document).ready(function(){
     $('#secret').text(value);
     $('#encoded').val(value);
     $('#n').text("n=" + en);
-
-    $('form').on('submit', function(e){
-        e.preventDefault();
-        console.log(e);
-        console.log($('#decoded').val());
-        console.log($('#encoded').val());
-    })
 });
