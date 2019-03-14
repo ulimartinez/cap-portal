@@ -5,7 +5,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: {
-        app: './src/index.js'
+        app: './src/index.js',
+        error: './src/error.js'
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -15,8 +16,15 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             'title': "captive portal",
-            'template': "src/index.html"
+            'template': "src/index.html",
+            'chunks': ["error", "app"]
         }),
+        new HtmlWebpackPlugin({
+            'filename': 'error.html',
+            'title': "error",
+            'template': "src/error.html",
+            'excludeChunks': ["app"]
+        })
     ],
     module: {
         rules: [

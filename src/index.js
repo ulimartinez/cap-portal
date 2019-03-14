@@ -1,13 +1,6 @@
-import 'jquery';
-import 'bootstrap';
-import './custom.css';
-import './main.scss';
-import 'popper.js';
-
-const $ = require('jquery');
+import './error';
 
 $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
     let secrets = [
         {"code":"udqgrpsdvv", "n":3}, //randompass
         {"code":"zhsafqvou", "n":7}, //saltyjohn
